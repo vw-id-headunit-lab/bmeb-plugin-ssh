@@ -1,0 +1,4 @@
+/data/
+/runtime/
+*.test
+coverage.out

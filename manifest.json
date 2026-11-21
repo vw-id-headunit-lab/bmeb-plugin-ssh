@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "id": "sshd",
+  "name": "SSH Server",
+  "version": "0.2.0",
+  "type": "daemon",
+  "enabled": true,
+  "autostart": true,
+  "config_disabled": true,
+  "entrypoint": "run.sh",
+  "cleanup_entrypoint": "cleanup.sh",
+  "priority": 50,
+  "ready": {
+    "type": "file",
+    "stable_sec": 1
+  },
+  "restart": {
+    "policy": "on-unexpected-exit",
+    "max_retries": 2,
+    "backoff_sec": [
+      2,
+      5
+    ]
+  },
+  "start_timeout_sec": 15,
+  "stop_timeout_sec": 5
+}
